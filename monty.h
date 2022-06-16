@@ -1,12 +1,14 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define _POSIX_C_SOURCE  200809L
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include <unistd.h>
 
+#define UNDEFINED 0
 #define DELIM " \t\n"
 #define USAGE "USAGE: monty file\n"
 #define NOACCESS "Error: Can't open file %s\n"
@@ -44,15 +46,24 @@ typedef struct instruction_s
 
 typedef struct global_s
 {
-    stack_t *head;
-    stack_t *tail;
-    char *value;
-    unsigned int line_number;
-    char *bufline;
-    FILE *fd;
-	int operand;
+	stack_t *head;
+	char *value;
+	unsigned int line_number;
+	char *bufline;
+	FILE *fd;
+	char *cmd;
 } global_t;
 
 extern global_t var;
+
+void free_var(void);
+void free_stack(void);
+void run_cmd(char *bufline);
+void (*get_cmd(void))(stack_t **head, unsigned int line_number);
+void h_error(const char *message, unsigned int var_1, char *var_2);
+void pusher(stack_t **stack, unsigned int line_number);
+void paller(stack_t **stack, unsigned int line_number);
+void pinter(stack_t **stack, unsigned int line_number);
+void popper(stack_t **stack, unsigned int line_number);
 
 #endif
