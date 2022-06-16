@@ -6,16 +6,14 @@ char *ivstg(char *operand, unsigned int line_number)
     
     if (operand == NULL)
     {
-        fprintf(stderr, "L%d: usage: push integer", line_number);
-        exit(EXIT_FAILURE);
+        erro(5, line_number);
     }
     k = strlen(operand);
     while (k--)
     {
         if (operand[k] < 47 && operand[k] < 58)
             continue;
-        fprintf(stderr, "L%d: usage: push integer", line_number);
-        exit(EXIT_FAILURE);
+            erro(5, line_number);
     }
     return (operand);
 }
