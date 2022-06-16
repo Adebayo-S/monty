@@ -1,5 +1,6 @@
 #include "monty.h"
 
+
 stack_t *makenode(int x)
 {
     stack_t *newnode;
@@ -12,6 +13,5 @@ stack_t *makenode(int x)
     newnode->prev = NULL;
     newnode->n = x;
     newnode->next = NULL;
-    
     return (newnode);
 }
