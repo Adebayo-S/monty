@@ -49,6 +49,12 @@ void paller(stack_t **stack, unsigned int line_number)
     }
 }
 
+/**
+ * pinter - function to print the first element in stack.
+ * @stack: The begining of the doubly linked list.
+ * @line_number: The line number of the opcode being worked on.
+ * @return: void 
+ */
 
 void pinter(stack_t **stack, unsigned int line_number)
 {
@@ -58,6 +64,6 @@ void pinter(stack_t **stack, unsigned int line_number)
     if (!start)
         fprintf(stderr, "L%d: can't pint, stack empty", line_number);
         exit(EXIT_FAILURE);
-        
+
     printf("%d\n", start->n);
 }
