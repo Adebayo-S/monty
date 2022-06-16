@@ -43,6 +43,7 @@ typedef struct global_s
     stack_t *tail;
     unsigned int line_number;
     char *bufline;
+	int operand;
 } global_t;
 
 extern global_t var;
