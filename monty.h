@@ -7,7 +7,9 @@
 #include <ctype.h>
 #include <unistd.h>
 
-#define DELIM " /t/n"
+#define DELIM " \t\n"
+#define USAGE "USAGE: monty file\n"
+#define NOACCESS "Error: Can't open file %s\n"
 #define INVALID "L%d: unknown instruction %s\n"
 
 /**
@@ -47,6 +49,7 @@ typedef struct global_s
     char *value;
     unsigned int line_number;
     char *bufline;
+    FILE *fd;
 } global_t;
 
 extern global_t var;
