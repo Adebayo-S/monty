@@ -7,6 +7,9 @@
 #include <ctype.h>
 #include <unistd.h>
 
+#define DELIM " /t/n"
+#define INVALID "L%d: unknown instruction %s\n"
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -41,6 +44,7 @@ typedef struct global_s
 {
     stack_t *head;
     stack_t *tail;
+    char *value;
     unsigned int line_number;
     char *bufline;
 } global_t;
