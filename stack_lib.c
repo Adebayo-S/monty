@@ -80,9 +80,9 @@ void popper(stack_t **stack, unsigned int line_number)
     stack_t *start;
 
     start = *stack;
-    if (!start)
+    if (stack == NULL || *stack == NULL)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+        fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
         exit(EXIT_FAILURE);
 	}
 
@@ -90,4 +90,10 @@ void popper(stack_t **stack, unsigned int line_number)
     if (stack != NULL)
         (*stack)->prev = NULL;
     free(start);
+}
+
+
+void noper(__attribute__((unused))stack_t **stack, __attribute__((unused))unsigned int line_number)
+{
+    ;
 }
