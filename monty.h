@@ -50,6 +50,7 @@ typedef struct global_s
     unsigned int line_number;
     char *bufline;
     FILE *fd;
+	int operand;
 } global_t;
 
 extern global_t var;
