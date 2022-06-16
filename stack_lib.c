@@ -62,8 +62,23 @@ void pinter(stack_t **stack, unsigned int line_number)
 
     start = *stack;
     if (!start)
-        fprintf(stderr, "L%d: can't pint, stack empty", line_number);
+        fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
         exit(EXIT_FAILURE);
 
     printf("%d\n", start->n);
+}
+
+
+void poper(stack_t **stack, unsigned int line_number)
+{
+    stack_t *start;
+
+    start = *stack;
+    if (!start)
+        fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+        exit(EXIT_FAILURE);
+    *stack = start->next;
+    if (stack != NULL)
+        (*stack)->prev = NULL;
+    free(start);
 }
