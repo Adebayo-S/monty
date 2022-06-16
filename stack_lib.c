@@ -3,18 +3,20 @@
 /**
  * pusher - function to push entered operand to stack.
  * @stack: The begining of the doubly linked list.
- * @line_number: The line number of the opcode being worked on. 
- * @return: void 
+ * @line_number: The line number of the opcode being worked on.
+ * @return: void
  */
 
 void pusher(stack_t **stack, unsigned int line_number)
 {
-    stack_t *start;
+	stack_t *start;
+
+	(void)line_number;
 
     start = malloc(sizeof(stack_t));
     if (!start)
     {
-        h_error("Error: malloc failed\n", NULL);
+        h_error("Error: malloc failed\n", UNDEFINED, NULL);
         exit(EXIT_FAILURE);
     }
     if (*stack != NULL)
@@ -26,16 +28,18 @@ void pusher(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * paller - function to print out all element in stack. 
+ * paller - function to print out all element in stack.
  * @stack: The begining of the doubly linked list.
  * @line_number: The line number of the opcode being worked on.
- * @return: void 
+ * @return: void
  */
 
 void paller(stack_t **stack, unsigned int line_number)
 {
     stack_t *temp;
     int value;
+
+	(void)line_number;
 
     if (stack == NULL)
         exit(EXIT_FAILURE);
@@ -53,7 +57,7 @@ void paller(stack_t **stack, unsigned int line_number)
  * pinter - function to print the first element in stack.
  * @stack: The begining of the doubly linked list.
  * @line_number: The line number of the opcode being worked on.
- * @return: void 
+ * @return: void
  */
 
 void pinter(stack_t **stack, unsigned int line_number)
@@ -62,21 +66,26 @@ void pinter(stack_t **stack, unsigned int line_number)
 
     start = *stack;
     if (!start)
+	{
         fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
         exit(EXIT_FAILURE);
+	}
 
     printf("%d\n", start->n);
 }
 
 
-void poper(stack_t **stack, unsigned int line_number)
+void popper(stack_t **stack, unsigned int line_number)
 {
     stack_t *start;
 
     start = *stack;
     if (!start)
-        fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
         exit(EXIT_FAILURE);
+	}
+
     *stack = start->next;
     if (stack != NULL)
         (*stack)->prev = NULL;
