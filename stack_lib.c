@@ -17,3 +17,21 @@ void pushh(stack_t **stack, unsigned int line_number)
     start->prev = NULL;
     *stack = start;
 }
+
+
+void palll(stack_t **stack, unsigned int line_number)
+{
+    stack_t *temp;
+    int value;
+
+    if (stack == NULL)
+        exit(EXIT_FAILURE);
+        
+    temp = *stack;
+    while (temp != NULL)
+    {
+        value = temp->n;
+        printf("%d\n", value);
+        temp = temp->next;
+    }
+}
