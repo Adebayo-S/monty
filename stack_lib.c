@@ -19,7 +19,7 @@ void pusher(stack_t **stack, unsigned int line_number)
     }
     if (*stack != NULL)
         (*stack)->prev = start;
-    start->n = var.operand;
+    start->n = atoi(var.value);
     start->next = *stack;
     start->prev = NULL;
     *stack = start;
@@ -47,4 +47,17 @@ void paller(stack_t **stack, unsigned int line_number)
         printf("%d\n", value);
         temp = temp->next;
     }
+}
+
+
+void pinter(stack_t **stack, unsigned int line_number)
+{
+    stack_t *start;
+
+    start = *stack;
+    if (!start)
+        fprintf(stderr, "L%d: can't pint, stack empty", line_number);
+        exit(EXIT_FAILURE);
+        
+    printf("%d\n", start->n);
 }
