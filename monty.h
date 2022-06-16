@@ -37,4 +37,14 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+typedef struct global_s
+{
+    stack_t *head;
+    stack_t *tail;
+    unsigned int line_number;
+    char *bufline;
+} global_t;
+
+extern global_t var;
+
 #endif
