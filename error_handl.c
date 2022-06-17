@@ -60,6 +60,9 @@ void erro_ext(int code, int va_arg)
 		case 9:
 			dprintf(STDERR_FILENO, ADD, va_arg);
 			break;
+		case 10:
+			dprintf(STDERR_FILENO, SUB, va_arg);
+			break;
 		default:
 			break;
 	}

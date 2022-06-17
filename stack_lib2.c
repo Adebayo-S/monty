@@ -70,7 +70,32 @@ void adder(stack_t **stack, unsigned int line_number)
 	free(first);
 }
 
+/**
+ * subber - handles the subtraction instruction
+ * @stack: double pointer to the stack to push to
+ * @line_number: number of the line in the file
+ */
+void subber(stack_t **stack, unsigned int line_number)
+{
+	stack_t *first = *stack, *second = NULL;
+	int diff = 0;
 
+	if (dlistint_len(*stack) < 2)
+		erro_ext(10, line_number);
+
+	second = first->next;
+
+	diff = (second->n) - (first->n);
+	second->n = diff;
+	*stack = second;
+	free(first);
+}
+
+/**
+ * divider - handles the division instruction
+ * @stack: double pointer to the stack to push to
+ * @line_number: number of the line in the file
+ */
 void divider(stack_t **stack, unsigned int line_number)
 {
 	stack_t *start, *next;
@@ -78,7 +103,7 @@ void divider(stack_t **stack, unsigned int line_number)
 
 	printf("Enters");
 	if (dlistint_len(*stack) < 2)
-		erro_ext(10, line_number);
+		erro_ext(11, line_number);
 	printf("out");
 	if ((*stack)->n == 0)
 		erro_ext(11, line_number);

@@ -21,6 +21,7 @@
 #define PINT "L%d: can't pint, stack empty\n"
 #define SWAP "L%d: can't swap, stack too short\n"
 #define ADD "L%d: can't add, stack too short\n"
+#define SUB "L%d: can't sub, stack too short\n"
 #define DIV "L%d: can't div, stack too short\n"
 #define DERR "L%d: division by zero\n"
 
@@ -89,6 +90,7 @@ void pinter(stack_t **stack, unsigned int line_number);
 void popper(stack_t **stack, unsigned int line_number);
 void swapper(stack_t **stack, unsigned int line_number);
 void adder(stack_t **stack, unsigned int line_number);
+void subber(stack_t **stack, unsigned int line_number);
 void divider(stack_t **stack, unsigned int line_number);
 void nopper(stack_t **stack, unsigned int line_number);
 
