@@ -46,7 +46,7 @@ typedef struct stack_s
  * @f: function to handle the opcode
  *
  * Description: opcode and its function
- * for stack, queues, LIFO, FIFO Holberton project
+ * for stack, queues, LIFO, FIFO Alx project
  */
 typedef struct instruction_s
 {
@@ -54,6 +54,16 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct global_s - global struct variable
+ * @head: head of the stack
+ * @value: value passed into the opcode
+ * @line_number: line number of the opcode
+ * @bufline: line read from bytecode
+ * @fd: file descriptor
+ * @cmd: opcode
+ *
+ */
 typedef struct global_s
 {
 	stack_t *head;
