@@ -14,6 +14,7 @@ char *ivstg(char *operand, unsigned int line_number)
 	{ 
 		erro(5, line_number);
 	}
+	i = 0;
 	k = (strlen(operand));
 	if (operand[0] == 45)
 		i++;
