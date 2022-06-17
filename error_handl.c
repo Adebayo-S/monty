@@ -38,10 +38,3 @@ void erro(int code, ...)
 	}
 	va_end(param), exit(EXIT_FAILURE);
 }
-
-/*case 8:
-			dprintf(STDERR_FILENO, SWAP, va_arg(param, int));
-			break;
-		case 9:
-			dprintf(STDERR_FILENO, ADD, va_arg(param, int));
-			break;*/

@@ -4,7 +4,7 @@
  * pusher - function to push entered operand to stack.
  * @stack: The begining of the doubly linked list.
  * @line_number: The line number of the opcode being worked on.
- * @return: void
+ * Return: void
  */
 
 void pusher(stack_t **stack, unsigned int line_number)
@@ -29,7 +29,7 @@ void pusher(stack_t **stack, unsigned int line_number)
  * paller - function to print out all element in stack.
  * @stack: The begining of the doubly linked list.
  * @line_number: The line number of the opcode being worked on.
- * @return: void
+ * Return: void
  */
 
 void paller(stack_t **stack, unsigned int line_number)
@@ -55,7 +55,7 @@ void paller(stack_t **stack, unsigned int line_number)
  * pinter - function to print the first element in stack.
  * @stack: The begining of the doubly linked list.
  * @line_number: The line number of the opcode being worked on.
- * @return: void
+ * Return: void
  */
 void pinter(stack_t **stack, unsigned int line_number)
 {
@@ -72,7 +72,7 @@ void pinter(stack_t **stack, unsigned int line_number)
  * popper - function to delete an element from the stack.
  * @stack: The begining of the doubly linked list.
  * @line_number: The line number of the opcode being worked on.
- * @return: void
+ * Return: void
  */
 void popper(stack_t **stack, unsigned int line_number)
 {
@@ -95,7 +95,7 @@ void popper(stack_t **stack, unsigned int line_number)
  * Return: void
  */
 void nopper(__attribute__((unused))stack_t **stack,
- 	__attribute__((unused))unsigned int line_number)
+	__attribute__((unused))unsigned int line_number)
 {
 	;
 }
