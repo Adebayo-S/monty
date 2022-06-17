@@ -48,3 +48,24 @@ void swapper(stack_t **stack, unsigned int line_number)
 	second->prev = NULL;
 	*stack = second;
 }
+
+/**
+ * adder - handles the add instruction
+ * @stack: double pointer to the stack to push to
+ * @line_number: number of the line in the file
+ */
+void adder(stack_t **stack, unsigned int line_number)
+{
+	stack_t *first = *stack, *second = NULL;
+	int sum = 0;
+
+	if (dlistint_len(*stack) < 2)
+		erro(9, line_number);
+
+	second = first->next;
+
+	sum = (first->n) +(second->n);
+	second->n = sum;
+	*stack = second;
+	free(first);
+}
