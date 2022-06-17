@@ -9,7 +9,7 @@
 #include <unistd.h>
 
 #define UNDEFINED 0
-#define DELIM " \t\n"
+#define DELIM " \r\t\n"
 #define USAGE "USAGE: monty file\n"
 #define NOACCESS "Error: Can't open file %s\n"
 #define INVALID "L%d: unknown instruction %s\n"
@@ -61,9 +61,11 @@ void free_stack(void);
 void run_cmd(char *bufline);
 void (*get_cmd(void))(stack_t **head, unsigned int line_number);
 void h_error(const char *message, unsigned int var_1, char *var_2);
+char *ivstg(char *operand, unsigned int line_number);
 void pusher(stack_t **stack, unsigned int line_number);
 void paller(stack_t **stack, unsigned int line_number);
 void pinter(stack_t **stack, unsigned int line_number);
 void popper(stack_t **stack, unsigned int line_number);
+void nopper(__attribute__((unused))stack_t **stack, __attribute__((unused))unsigned int line_number);
 
 #endif
