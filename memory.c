@@ -9,8 +9,10 @@ void free_var(void)
 	if (var.bufline)
 	{
 		free(var.bufline);
-		free(var.cmd);
-		free(var.value);
+		/*free(var.cmd);
+		printf("free cmd done\n");*/
+		/*free(var.value);
+		printf("free value done\n");*/
 	}
 }
 
