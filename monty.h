@@ -7,12 +7,19 @@
 #include <string.h>
 #include <ctype.h>
 #include <unistd.h>
+#include <stdarg.h>
 
 #define UNDEFINED 0
 #define DELIM " \r\t\n"
 #define USAGE "USAGE: monty file\n"
 #define NOACCESS "Error: Can't open file %s\n"
 #define INVALID "L%d: unknown instruction %s\n"
+#define MALLOC "Error: malloc failed\n"
+#define PUSH "L%d: usage: push integer\n"
+#define POP "L%d: can't pop an empty stack\n"
+#define PINT "L%d: can't pint, stack empty\n"
+#define SWAP "L%d: can't swap, stack too short"
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -60,7 +67,7 @@ void free_var(void);
 void free_stack(void);
 void run_cmd(char *bufline);
 void (*get_cmd(void))(stack_t **head, unsigned int line_number);
-void h_error(const char *message, unsigned int var_1, char *var_2);
+void erro(int code, ...);
 char *ivstg(char *operand, unsigned int line_number);
 void pusher(stack_t **stack, unsigned int line_number);
 void paller(stack_t **stack, unsigned int line_number);
