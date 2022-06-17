@@ -17,6 +17,7 @@ void (*get_cmd(void))(stack_t **head, unsigned int line_number)
 		{"add", adder},
 		{"sub", subber},
 		{"div", divider},
+		{"mul", multpler},
 		{NULL, NULL}
 	};
 

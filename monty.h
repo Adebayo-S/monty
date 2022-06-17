@@ -24,6 +24,7 @@
 #define SUB "L%d: can't sub, stack too short\n"
 #define DIV "L%d: can't div, stack too short\n"
 #define DERR "L%d: division by zero\n"
+#define MUL "L%d: can't mul, stack too short\n"
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -92,6 +93,7 @@ void swapper(stack_t **stack, unsigned int line_number);
 void adder(stack_t **stack, unsigned int line_number);
 void subber(stack_t **stack, unsigned int line_number);
 void divider(stack_t **stack, unsigned int line_number);
+void multpler(stack_t **stack, unsigned int line_number);
 void nopper(stack_t **stack, unsigned int line_number);
 
 #endif
