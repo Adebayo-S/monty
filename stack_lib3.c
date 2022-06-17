@@ -37,5 +37,8 @@ void pchar(stack_t **stack, unsigned int line_number)
 	if (!start)
 		erro(15, line_number);
 
+	if (start->n > 127 || start->n < 0)
+		erro(16, line_number);
+
 	printf("%c\n", start->n);
 }
