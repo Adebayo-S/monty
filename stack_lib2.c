@@ -11,7 +11,7 @@ char *ivstg(char *operand, unsigned int line_number)
 	int i, k;
 
 	if (operand == NULL)
-	{ 
+	{
 		erro(5, line_number);
 	}
 	i = 0;
@@ -24,5 +24,5 @@ char *ivstg(char *operand, unsigned int line_number)
 			continue;
 		erro(5, line_number);
 	}
-	return (operand); 
+	return (operand);
 }
