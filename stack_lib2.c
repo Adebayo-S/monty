@@ -38,7 +38,7 @@ void swapper(stack_t **stack, unsigned int line_number)
 	stack_t *first = *stack, *second = NULL;
 
 	if (dlistint_len(*stack) < 2)
-		erro(8, line_number);
+		erro_ext(8, line_number);
 
 	second = first->next;
 
@@ -60,7 +60,7 @@ void adder(stack_t **stack, unsigned int line_number)
 	int sum = 0;
 
 	if (dlistint_len(*stack) < 2)
-		erro(9, line_number);
+		erro_ext(9, line_number);
 
 	second = first->next;
 
@@ -68,4 +68,21 @@ void adder(stack_t **stack, unsigned int line_number)
 	second->n = sum;
 	*stack = second;
 	free(first);
+}
+
+
+void divider(stack_t **stack, unsigned int line_number)
+{
+	stack_t *start, *next;
+	int ans;
+
+	if (dlistint_len(*stack) < 2)
+		erro_ext(10, line_number);
+	start = *stack;
+	next = start->next;
+	ans = (start->n)/(next->n);
+	next->n = ans;
+	next->prev = NULL;
+	*stack = next;
+	free(start);
 }

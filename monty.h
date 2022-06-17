@@ -21,7 +21,7 @@
 #define PINT "L%d: can't pint, stack empty\n"
 #define SWAP "L%d: can't swap, stack too short\n"
 #define ADD "L%d: can't add, stack too short\n"
-
+#define DIV "L%d: can't div, stack too short\n"
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
