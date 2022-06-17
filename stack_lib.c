@@ -3,90 +3,105 @@
 /**
  * pusher - function to push entered operand to stack.
  * @stack: The begining of the doubly linked list.
- * @line_number: The line number of the opcode being worked on. 
- * @return: void 
+ * @line_number: The line number of the opcode being worked on.
+ * @return: void
  */
 
 void pusher(stack_t **stack, unsigned int line_number)
 {
-    stack_t *start;
+	stack_t *start;
 	char *text;
 
 	text = ivstg(var.value, line_number);
-    start = malloc(sizeof(stack_t));
-    if (!start)
-    {
-        h_error("Error: malloc failed\n", NULL);
-        exit(EXIT_FAILURE);
-    }
-    if (*stack != NULL)
-        (*stack)->prev = start;
-    start->n = atoi(text);
-    start->next = *stack;
-    start->prev = NULL;
-    *stack = start;
+	start = malloc(sizeof(stack_t));
+	if (!start)
+	{
+		h_error("Error: malloc failed\n", UNDEFINED, NULL);
+		exit(EXIT_FAILURE);
+	}
+	if (*stack != NULL)
+		(*stack)->prev = start;
+	start->n = atoi(text);
+	start->next = *stack;
+	start->prev = NULL;
+	*stack = start;
 }
 
 /**
- * paller - function to print out all element in stack. 
+ * paller - function to print out all element in stack.
  * @stack: The begining of the doubly linked list.
  * @line_number: The line number of the opcode being worked on.
- * @return: void 
+ * @return: void
  */
 
 void paller(stack_t **stack, unsigned int line_number)
 {
-    stack_t *temp;
-    int value;
+	stack_t *temp;
+	int value;
 
-    if (stack == NULL)
-        exit(EXIT_FAILURE);
+	(void)line_number;
 
-    temp = *stack;
-    while (temp != NULL)
-    {
-        value = temp->n;
-        printf("%d\n", value);
-        temp = temp->next;
-    }
+	if (!(*stack) || !stack)
+		exit(EXIT_FAILURE);
+
+	temp = *stack;
+	while (temp != NULL)
+	{
+		value = temp->n;
+		printf("%d\n", value);
+		temp = temp->next;
+	}
 }
 
 /**
  * pinter - function to print the first element in stack.
  * @stack: The begining of the doubly linked list.
  * @line_number: The line number of the opcode being worked on.
- * @return: void 
+ * @return: void
  */
-
 void pinter(stack_t **stack, unsigned int line_number)
 {
-    stack_t *start;
+	stack_t *start;
 
-    start = *stack;
-    if (!start)
-        fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-        exit(EXIT_FAILURE);
+	start = *stack;
+	if (!start)
+	{
+		h_error("L%d: can't pint, stack empty\n", line_number, NULL);
+	}
 
-    printf("%d\n", start->n);
+	printf("%d\n", start->n);
+}
+
+/**
+ * popper - function to delete an element from the stack.
+ * @stack: The begining of the doubly linked list.
+ * @line_number: The line number of the opcode being worked on.
+ * @return: void
+ */
+void popper(stack_t **stack, unsigned int line_number)
+{
+	stack_t *start;
+
+	start = *stack;
+	if (stack == NULL || *stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	*stack = start->next;
+	if (*stack != NULL)
+		(*stack)->prev = NULL;
+	free(start);
 }
 
 
-void poper(stack_t **stack, unsigned int line_number)
+/**
+ * noper - function to do nada.
+ * @stack: The begining of the doubly linked list.
+ * @line_number: The line number of the opcode being worked on.
+ * @return: void
+ */
+void nopper(__attribute__((unused))stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
-    stack_t *start;
-
-    start = *stack;
-    if (stack == NULL || *stack == NULL)
-        fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
-        exit(EXIT_FAILURE);
-    *stack = start->next;
-    if (stack != NULL)
-        (*stack)->prev = NULL;
-    free(start);
-}
-
-
-void noper(__attribute__((unused))stack_t **stack, __attribute__((unused))unsigned int line_number)
-{
-    ;
+	;
 }
