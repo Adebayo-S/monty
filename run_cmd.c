@@ -2,7 +2,6 @@
 
 /**
  * get_cmd - return the requisite opcode to run
- * @cmd: opcode passed
  * Return: pointer to the function that executes the opcode
  */
 void (*get_cmd(void))(stack_t **head, unsigned int line_number)

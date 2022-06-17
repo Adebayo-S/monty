@@ -18,7 +18,8 @@
 #define PUSH "L%d: usage: push integer\n"
 #define POP "L%d: can't pop an empty stack\n"
 #define PINT "L%d: can't pint, stack empty\n"
-#define SWAP "L%d: can't swap, stack too short"
+#define SWAP "L%d: can't swap, stack too short\n"
+#define ADD "L%d: can't add, stack too short\n"
 
 
 /**

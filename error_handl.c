@@ -2,7 +2,8 @@
 
 /**
  *erro - prints the associated error message to stderr
- * @return: void
+ * @code: the error code
+ * Return: void
  */
 void erro(int code, ...)
 {
@@ -32,15 +33,15 @@ void erro(int code, ...)
 		case 7:
 			dprintf(STDERR_FILENO, POP, va_arg(param, int));
 			break;
-		case 8:
-			dprintf(STDERR_FILENO, SWAP, va_arg(param, int));
-			break;
-		case 9:
-			dprintf(STDERR_FILENO, "L%d: can't add, stack too short", va_arg(param, int));
-			break;
 		default:
 			break;
 	}
-	va_end(param);
-	exit(EXIT_FAILURE);
+	va_end(param), exit(EXIT_FAILURE);
 }
+
+/*case 8:
+			dprintf(STDERR_FILENO, SWAP, va_arg(param, int));
+			break;
+		case 9:
+			dprintf(STDERR_FILENO, ADD, va_arg(param, int));
+			break;*/

@@ -89,12 +89,13 @@ void popper(stack_t **stack, unsigned int line_number)
 
 
 /**
- * noper - function to do nada.
+ * nopper - function to do nada.
  * @stack: The begining of the doubly linked list.
  * @line_number: The line number of the opcode being worked on.
- * @return: void
+ * Return: void
  */
-void nopper(__attribute__((unused))stack_t **stack, __attribute__((unused))unsigned int line_number)
+void nopper(__attribute__((unused))stack_t **stack,
+ 	__attribute__((unused))unsigned int line_number)
 {
 	;
 }

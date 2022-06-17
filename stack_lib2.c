@@ -4,7 +4,7 @@
  * ivstg - investigate the operand to check if the input is alpha.
  * @operand: the operand to investigate.
  * @line_number: The line number of the opcode being worked on.
- * @return: the operand
+ * Return: the operand
  */
 char *ivstg(char *operand, unsigned int line_number)
 {
