@@ -38,7 +38,29 @@ void erro(int code, ...)
 			dprintf(STDERR_FILENO, POP, va_arg(param, int));
 			break;
 		default:
+			erro_ext(code, va_arg(param, int));
 			break;
 	}
 	va_end(param), exit(EXIT_FAILURE);
+}
+
+/**
+ * erro_ext - extensuion for the erro function
+ * @code: the error code
+ * @va_arg: the variable argument
+ * Return: void
+ */
+void erro_ext(int code, int va_arg)
+{
+	switch (code)
+	{
+		case 8:
+			dprintf(STDERR_FILENO, SWAP, va_arg);
+			break;
+		case 9:
+			dprintf(STDERR_FILENO, ADD, va_arg);
+			break;
+		default:
+			break;
+	}
 }
