@@ -40,7 +40,7 @@ void paller(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 
 	if (!(*stack) || !stack)
-		exit(EXIT_FAILURE);
+		return;
 
 	temp = *stack;
 	while (temp != NULL)
