@@ -60,7 +60,7 @@ void adder(stack_t **stack, unsigned int line_number)
 	int sum = 0;
 
 	if (dlistint_len(*stack) < 2)
-		erro_ext(9, line_number);
+		erro(9, line_number);
 
 	second = first->next;
 
@@ -81,7 +81,7 @@ void subber(stack_t **stack, unsigned int line_number)
 	int diff = 0;
 
 	if (dlistint_len(*stack) < 2)
-		erro_ext(10, line_number);
+		erro(10, line_number);
 
 	second = first->next;
 
@@ -101,12 +101,11 @@ void divider(stack_t **stack, unsigned int line_number)
 	stack_t *start, *next;
 	int ans;
 
-	printf("Enters");
 	if (dlistint_len(*stack) < 2)
-		erro_ext(11, line_number);
-	printf("out");
+		erro(11, line_number);
 	if ((*stack)->n == 0)
-		erro_ext(11, line_number);
+		erro(12, line_number);
+
 	start = *stack;
 	next = start->next;
 	ans = (next->n) / (start->n);
