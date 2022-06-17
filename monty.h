@@ -21,7 +21,8 @@
 #define PINT "L%d: can't pint, stack empty\n"
 #define SWAP "L%d: can't swap, stack too short\n"
 #define ADD "L%d: can't add, stack too short\n"
-
+#define DIV "L%d: can't div, stack too short\n"
+#define DERR "L%d: division by zero\n"
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -78,6 +79,7 @@ void pinter(stack_t **stack, unsigned int line_number);
 void popper(stack_t **stack, unsigned int line_number);
 void swapper(stack_t **stack, unsigned int line_number);
 void adder(stack_t **stack, unsigned int line_number);
+void divider(stack_t **stack, unsigned int line_number);
 void nopper(__attribute__((unused))stack_t **stack, __attribute__((unused))unsigned int line_number);
 
 #endif
