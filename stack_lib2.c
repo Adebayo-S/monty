@@ -17,7 +17,7 @@ char *ivstg(char *operand, unsigned int line_number)
 	k = strlen(operand);
 	while (k--)
 	{
-		if (operand[k] > 47 && operand[k] < 58 || operand[1] == 45)
+		if ((operand[k] > 47 && operand[k] < 58) || operand[1] == 45)
 			continue;
 		erro(5, line_number);
 	}
