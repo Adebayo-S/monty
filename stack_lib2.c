@@ -84,7 +84,7 @@ void divider(stack_t **stack, unsigned int line_number)
 		erro_ext(11, line_number);
 	start = *stack;
 	next = start->next;
-	ans = (next->n)/(start->n);
+	ans = (next->n) / (start->n);
 	*stack = next;
 	(*stack)->n = ans;
 	free(start);
