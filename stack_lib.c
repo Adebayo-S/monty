@@ -15,10 +15,8 @@ void pusher(stack_t **stack, unsigned int line_number)
 	text = ivstg(var.value, line_number);
 	start = malloc(sizeof(stack_t));
 	if (!start)
-	{
-		h_error("Error: malloc failed\n", UNDEFINED, NULL);
-		exit(EXIT_FAILURE);
-	}
+		erro(4);
+
 	if (*stack != NULL)
 		(*stack)->prev = start;
 	start->n = atoi(text);
@@ -65,9 +63,7 @@ void pinter(stack_t **stack, unsigned int line_number)
 
 	start = *stack;
 	if (!start)
-	{
-		h_error("L%d: can't pint, stack empty\n", line_number, NULL);
-	}
+		erro(6, line_number);
 
 	printf("%d\n", start->n);
 }
@@ -84,10 +80,7 @@ void popper(stack_t **stack, unsigned int line_number)
 
 	start = *stack;
 	if (stack == NULL || *stack == NULL)
-	{
-		fprintf(stderr, "L%d: can't pop, stack empty\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+		erro(7, line_number);
 	*stack = start->next;
 	if (*stack != NULL)
 		(*stack)->prev = NULL;

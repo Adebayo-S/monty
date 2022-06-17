@@ -28,14 +28,14 @@ int main(int argc, char **argv)
 	size_t size = 0;
 
 	if (argc != 2)
-		h_error(USAGE, UNDEFINED, NULL);
+		erro(1);
 
 	init_var();
 
 	var.fd = fopen(argv[1], "r");
 
 	if (!var.fd)
-		h_error(NOACCESS, UNDEFINED, argv[1]);
+		erro(2, argv[1]);
 
 	while (getline(&var.bufline, &size, var.fd) != EOF)
 	{

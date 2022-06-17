@@ -46,6 +46,6 @@ void run_cmd(char *bufline)
 			f(&(var.head), var.line_number);
 		}
 		else
-			h_error(INVALID, var.line_number, var.cmd), free_stack();
+			erro(3, var.line_number, var.cmd), free_stack();
 	}
 }
