@@ -14,6 +14,7 @@ void (*get_cmd(void))(stack_t **head, unsigned int line_number)
 		{"pop", popper},
 		{"nop", nopper},
 		{"swap", swapper},
+		{"add", adder},
 		{NULL, NULL}
 	};
 
