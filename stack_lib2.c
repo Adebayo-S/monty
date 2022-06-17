@@ -64,7 +64,7 @@ void adder(stack_t **stack, unsigned int line_number)
 
 	second = first->next;
 
-	sum = (first->n) +(second->n);
+	sum = (first->n) + (second->n);
 	second->n = sum;
 	*stack = second;
 	free(first);
