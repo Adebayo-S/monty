@@ -70,11 +70,13 @@ void free_stack(void);
 void run_cmd(char *bufline);
 void (*get_cmd(void))(stack_t **head, unsigned int line_number);
 void erro(int code, ...);
+void erro_ext(int code, int va_arg);
 char *ivstg(char *operand, unsigned int line_number);
 void pusher(stack_t **stack, unsigned int line_number);
 void paller(stack_t **stack, unsigned int line_number);
 void pinter(stack_t **stack, unsigned int line_number);
 void popper(stack_t **stack, unsigned int line_number);
+void swapper(stack_t **stack, unsigned int line_number);
 void nopper(__attribute__((unused))stack_t **stack, __attribute__((unused))unsigned int line_number);
 
 #endif
