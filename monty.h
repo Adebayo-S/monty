@@ -22,6 +22,7 @@
 #define SWAP "L%d: can't swap, stack too short\n"
 #define ADD "L%d: can't add, stack too short\n"
 #define DIV "L%d: can't div, stack too short\n"
+#define DERR "L%d: division by zero\n"
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)

@@ -78,11 +78,13 @@ void divider(stack_t **stack, unsigned int line_number)
 
 	if (dlistint_len(*stack) < 2)
 		erro_ext(10, line_number);
+	if ((*stack)->n == 0)
+		erro_ext(11, line_number);
 	start = *stack;
 	next = start->next;
 	ans = (next->n)/(start->n);
-	next->n = ans;
-	next->prev = NULL;
 	*stack = next;
+	(*stack)->n = ans;
+	(*stack)->prev = NULL;
 	free(start);
 }
