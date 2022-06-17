@@ -8,16 +8,18 @@
  */
 char *ivstg(char *operand, unsigned int line_number)
 {
-	int k;
+	int i, k;
 
 	if (operand == NULL)
-	{
+	{ 
 		erro(5, line_number);
 	}
-	k = strlen(operand);
-	while (k--)
+	k = (strlen(operand));
+	if (operand[0] == 45)
+		i++;
+	for (; i < k; i++)
 	{
-		if ((operand[k] > 47 && operand[k] < 58) || operand[1] == 45)
+		if (operand[i] > 47 && operand[i] < 58)
 			continue;
 		erro(5, line_number);
 	}
