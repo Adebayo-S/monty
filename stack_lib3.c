@@ -22,3 +22,20 @@ void multpler(stack_t **stack, unsigned int line_number)
 	(*stack)->n = mul;
 	free(first);
 }
+
+/**
+ * pchar - print the char at the top of the stack.
+ * @stack: The begining of the doubly linked list.
+ * @line_number: The line number of the opcode being worked on.
+ * Return: void
+ */
+void pchar(stack_t **stack, unsigned int line_number)
+{
+	stack_t *start;
+
+	start = *stack;
+	if (!start)
+		erro(15, line_number);
+
+	printf("%c\n", start->n);
+}

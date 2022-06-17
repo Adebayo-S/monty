@@ -72,6 +72,15 @@ void erro_ext(int code, int va_arg)
 		case 13:
 			dprintf(STDERR_FILENO, MUL, va_arg);
 			break;
+		case 14:
+			dprintf(STDERR_FILENO, MOD, va_arg);
+			break;
+		case 15:
+			dprintf(STDERR_FILENO, PCHAR, va_arg);
+			break;
+		case 16:
+			dprintf(STDERR_FILENO, RANGE, va_arg);
+			break;
 		default:
 			break;
 	}
