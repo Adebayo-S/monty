@@ -13,9 +13,7 @@ void (*get_cmd(void))(stack_t **head, unsigned int line_number)
 		{"pall", paller},
 		{"pint", pinter},
 		{"pop", popper},
-		/*{"swap", swapper},
-		{"add", adder},
-		{"nop", nopper},*/
+		{"nop", nopper},
 		{NULL, NULL}
 	};
 
@@ -28,6 +26,11 @@ void (*get_cmd(void))(stack_t **head, unsigned int line_number)
 	return (cmds[i].f);
 }
 
+/**
+ * run_cmd - run the command
+ * @bufline: line read from bytecode
+ * Return: no return
+ */
 void run_cmd(char *bufline)
 {
 	void (*f)(stack_t **head, unsigned int line_number);
@@ -38,11 +41,11 @@ void run_cmd(char *bufline)
 		f = get_cmd();
 		if (f)
 		{
-			var.value = strtok(NULL, DELIM);
+			if (strcmp(var.cmd, "push") == 0)
+				var.value = strtok(NULL, DELIM);
 			f(&(var.head), var.line_number);
 		}
 		else
 			h_error(INVALID, var.line_number, var.cmd), free_stack();
-		free_var();
 	}
 }
