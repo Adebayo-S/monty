@@ -94,8 +94,8 @@ void popper(stack_t **stack, unsigned int line_number)
  * @line_number: The line number of the opcode being worked on.
  * Return: void
  */
-void nopper(__attribute__((unused))stack_t **stack,
-	__attribute__((unused))unsigned int line_number)
+void nopper(stack_t **stack, unsigned int line_number)
 {
-	;
+	(void)line_number;
+	(void)stack;
 }

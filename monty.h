@@ -90,7 +90,6 @@ void popper(stack_t **stack, unsigned int line_number);
 void swapper(stack_t **stack, unsigned int line_number);
 void adder(stack_t **stack, unsigned int line_number);
 void divider(stack_t **stack, unsigned int line_number);
-void nopper(__attribute__((unused))stack_t **stack,
-	__attribute__((unused))unsigned int line_number);
+void nopper(stack_t **stack, unsigned int line_number);
 
 #endif
