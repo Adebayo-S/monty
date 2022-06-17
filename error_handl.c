@@ -8,6 +8,8 @@
 void erro(int code, ...)
 {
 	va_list param;
+	int dig;
+	char *par;
 
 	va_start(param, code);
 	switch (code)
@@ -19,7 +21,9 @@ void erro(int code, ...)
 			dprintf(STDERR_FILENO, NOACCESS, va_arg(param, char *));
 			break;
 		case 3:
-			dprintf(STDERR_FILENO, INVALID, va_arg(param, int), va_arg(param, char *));
+			dig = va_arg(param, int);
+			par = va_arg(param, char *);
+			dprintf(STDERR_FILENO, INVALID, dig, par);
 			break;
 		case 4:
 			dprintf(STDERR_FILENO, MALLOC);
