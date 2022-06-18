@@ -54,7 +54,7 @@ void rotr(stack_t **stack, unsigned int line_number)
 void changemode(stack_t **stack, unsigned int line_number)
 {
 	(void)line_number;
-	var.idx = dlistint_len(*stack);
+	var.idx = dlistint_len(*stack) - 1;
 	if (strcmp(var.cmd, "queue") == 0)
 	{
 		var.mode = -1;
