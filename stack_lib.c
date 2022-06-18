@@ -1,4 +1,5 @@
 #include "monty.h"
+#include "lists.h"
 
 /**
  * pusher - function to push entered operand to stack.
@@ -11,18 +12,24 @@ void pusher(stack_t **stack, unsigned int line_number)
 {
 	stack_t *start;
 	char *text;
+	int n;
 
 	text = ivstg(var.value, line_number);
 	start = malloc(sizeof(stack_t));
+	n = atoi(text);
 	if (!start)
 		erro(4);
-
 	if (*stack != NULL)
 		(*stack)->prev = start;
 	start->n = atoi(text);
-	start->next = *stack;
-	start->prev = NULL;
-	*stack = start;
+	if (var.mode == -1)
+	{
+		insert_dnodeint_at_index(stack, var.idx, n);
+	}
+	else
+	{
+		add_dnodeint(stack, n);
+	}
 }
 
 /**
