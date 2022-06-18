@@ -24,6 +24,28 @@ void multpler(stack_t **stack, unsigned int line_number)
 }
 
 /**
+ * modder - handles the modulo instruction
+ * @stack: double pointer to the stack to push to
+ * @line_number: number of the line in the file
+ */
+void modder(stack_t **stack, unsigned int line_number)
+{
+	stack_t *first, *second;
+	int mod;
+
+	if (dlistint_len(*stack) < 2)
+		erro(14, line_number);
+
+	first = *stack;
+	second = first->next;
+
+	mod = (second->n) % (first->n);
+	*stack = second;
+	(*stack)->n = mod;
+	free(first);
+}
+
+/**
  * pchar - print the char at the top of the stack.
  * @stack: The begining of the doubly linked list.
  * @line_number: The line number of the opcode being worked on.

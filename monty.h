@@ -97,6 +97,7 @@ void adder(stack_t **stack, unsigned int line_number);
 void subber(stack_t **stack, unsigned int line_number);
 void divider(stack_t **stack, unsigned int line_number);
 void multpler(stack_t **stack, unsigned int line_number);
+void modder(stack_t **stack, unsigned int line_number);
 void nopper(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
