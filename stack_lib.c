@@ -10,13 +10,13 @@
 
 void pusher(stack_t **stack, unsigned int line_number)
 {
-	stack_t *reset;
+	stack_t **reset;
 	char *text;
 	int n;
 
 	text = ivstg(var.value, line_number);
 	n = atoi(text);
-	reset = *stack;
+	*reset = *stack;
 	if (var.mode == -1)
 	{
 		if (var.idx == 0)
