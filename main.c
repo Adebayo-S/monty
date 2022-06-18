@@ -14,6 +14,7 @@ void init_var(void)
 	var.value = NULL;
 	var.head = NULL;
 	var.line_number = 0;
+	var.mode = 1;
 }
 
 /**

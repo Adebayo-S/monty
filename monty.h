@@ -77,6 +77,8 @@ typedef struct global_s
 	char *bufline;
 	FILE *fd;
 	char *cmd;
+	int mode;
+	unsigned int idx;
 } global_t;
 
 extern global_t var;

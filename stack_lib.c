@@ -15,13 +15,7 @@ void pusher(stack_t **stack, unsigned int line_number)
 	int n;
 
 	text = ivstg(var.value, line_number);
-	start = malloc(sizeof(stack_t));
 	n = atoi(text);
-	if (!start)
-		erro(4);
-	if (*stack != NULL)
-		(*stack)->prev = start;
-	start->n = atoi(text);
 	if (var.mode == -1)
 	{
 		insert_dnodeint_at_index(stack, var.idx, n);

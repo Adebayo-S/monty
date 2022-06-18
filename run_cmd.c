@@ -23,6 +23,8 @@ void (*get_cmd(void))(stack_t **head, unsigned int line_number)
 		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},
+		{"stack", changemode},
+		{"queue", changemode},
 		{NULL, NULL}
 	};
 

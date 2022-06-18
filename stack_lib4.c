@@ -44,3 +44,17 @@ void rotr(stack_t **stack, unsigned int line_number)
 	delete_dnodeint_at_index(stack, index);
 	add_dnodeint(stack, val);
 }
+
+/**
+ * changemode - change mode of operation to stack or queue.
+ * @stack: The begining of the doubly linked list.
+ * @line_number: The line number of the opcode being worked on.
+ * Return: void
+ */
+void changemode(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+	var.idx = dlistlen(*stack) - 1;
+	var.mode *= -1;
+}

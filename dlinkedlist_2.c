@@ -61,7 +61,7 @@ stack_t *insert_dnodeint_at_index(stack_t **h, unsigned int idx, int n)
 	unsigned int i = 0;
 
 	if (!new)
-		return (NULL);
+		erro(4);
 
 	new->n = n;
 
