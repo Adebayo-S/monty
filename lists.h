@@ -14,5 +14,6 @@ stack_t *get_dnodeint_at_index(stack_t *head, unsigned int index);
 int sum_dlistint(stack_t *head);
 stack_t *insert_dnodeint_at_index(stack_t **h, unsigned int idx, int n);
 int delete_dnodeint_at_index(stack_t **head, unsigned int index);
+stack_t *reset_dlink(stack_t **h);
 
 #endif

@@ -25,6 +25,7 @@ void pusher(stack_t **stack, unsigned int line_number)
 		{
 			insert_dnodeint_at_index(stack, var.idx, n);
 		}
+		reset_dlink(stack);
 	}
 	else
 	{

@@ -86,7 +86,7 @@ stack_t *add_dnodeint_end(stack_t **head, const int n)
 	last->next = new;
 	new->prev = last;
 
-	return (*head);
+	return (new);
 }
 
 /**

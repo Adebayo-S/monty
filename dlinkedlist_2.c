@@ -137,3 +137,17 @@ int delete_dnodeint_at_index(stack_t **head, unsigned int index)
 
 	return (1);
 }
+
+stack_t *reset_dlink(stack_t **h)
+{
+	stack_t *temp;
+
+	temp = *h;
+	while (temp->prev != NULL)
+	{
+		temp = temp->prev;
+	}
+	*h = temp;
+
+	return (*h);
+}
