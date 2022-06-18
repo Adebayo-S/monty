@@ -20,6 +20,7 @@ void (*get_cmd(void))(stack_t **head, unsigned int line_number)
 		{"mul", multpler},
 		{"mod", modder},
 		{"pchar", pchar},
+		{"pstr", pstr},
 		{"rotl", rotl},
 		{NULL, NULL}
 	};

@@ -91,33 +91,23 @@ void rotl(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * rotl - rotate the stack to the top.
+ * pstr -  prints the string starting at the top of the stack
  * @stack: The begining of the doubly linked list.
  * @line_number: The line number of the opcode being worked on.
  * Return: void
  */
-void reverse(stack_t **stack, unsigned int line_number)
+void pstr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *start, *temp, *temp2;
+	stack_t *start;
 	(void)line_number;
 
 	start = *stack;
 
-	while (start->next)
-		start = start->next;
-
-	temp = start->prev;
-
-	while (temp)
+	while (start && start->n > 0 && start->n < 127)
 	{
-		temp2 = temp->prev;
-
-		temp->next->next = temp;
-		temp->prev = temp->next;
-		temp->next = temp2;
-
-		temp = temp->next;
+		printf("%c", start->n);
+		start = start->next;
 	}
 
-	start->prev = NULL;
+	printf("\n");
 }
