@@ -33,14 +33,14 @@ void rotl(stack_t **stack, unsigned int line_number)
 void rotr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *last;
-	int val = 0;
+	int val = 0, index = dlistint_len(*stack) - 1;
 	(void)line_number;
 
 	if (!*stack || !(*stack)->next)
 		return;
 
-	last = get_dnodeint_at_index(*stack, dlistint_len(*stack) - 1);
+	last = get_dnodeint_at_index(*stack, index);
 	val = last->n;
+	delete_dnodeint_at_index(stack, index);
 	add_dnodeint(stack, val);
-	free(last);
 }
