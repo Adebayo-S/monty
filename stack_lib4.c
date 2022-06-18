@@ -59,4 +59,8 @@ void changemode(stack_t **stack, unsigned int line_number)
 	{
 		var.mode = -1;
 	}
+	else
+	{
+		var.mode = 1;
+	}
 }
