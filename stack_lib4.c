@@ -61,6 +61,6 @@ void changemode(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-		reset_dlink(*stack);
+		reset_dlink(stack);
 	}
 }
