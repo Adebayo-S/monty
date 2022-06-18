@@ -41,6 +41,6 @@ void rotr(stack_t **stack, unsigned int line_number)
 
 	last = get_dnodeint_at_index(*stack, dlistint_len(*stack) - 1);
 	val = last->n;
-	add_dnodeintint(stack, val);
+	add_dnodeint(stack, val);
 	free(last);
 }
