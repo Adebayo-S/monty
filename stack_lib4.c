@@ -55,6 +55,6 @@ void changemode(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
-	var.idx = dlist_len(*stack) - 1;
+	var.idx = dlistint_len(*stack) - 1;
 	var.mode *= -1;
 }
