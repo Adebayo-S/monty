@@ -10,7 +10,6 @@
 
 void pusher(stack_t **stack, unsigned int line_number)
 {
-	stack_t *reset;
 	char *text;
 	int n;
 
@@ -18,7 +17,6 @@ void pusher(stack_t **stack, unsigned int line_number)
 	n = atoi(text);
 	if (var.mode == -1)
 	{
-		reset = *stack;
 		if (var.idx == 0)
 		{
 			add_dnodeint_end(stack, n);
@@ -27,7 +25,6 @@ void pusher(stack_t **stack, unsigned int line_number)
 		{
 			insert_dnodeint_at_index(stack, var.idx, n);
 		}
-		*stack = reset;
 	}
 	else
 	{
