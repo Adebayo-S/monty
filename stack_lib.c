@@ -16,9 +16,9 @@ void pusher(stack_t **stack, unsigned int line_number)
 
 	text = ivstg(var.value, line_number);
 	n = atoi(text);
-	reset = *stack;
 	if (var.mode == -1)
 	{
+		reset = *stack;
 		if (var.idx == 0)
 		{
 			add_dnodeint_end(stack, n);
