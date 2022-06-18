@@ -68,29 +68,6 @@ void pchar(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * rotl - rotate the stack to the top.
- * @stack: The begining of the doubly linked list.
- * @line_number: The line number of the opcode being worked on.
- * Return: void
- */
-void rotl(stack_t **stack, unsigned int line_number)
-{
-	stack_t *first;
-	int val = 0;
-	(void)line_number;
-
-	if (!*stack || !(*stack)->next)
-		return;
-
-	first = *stack;
-	val = first->n;
-	*stack = first->next;
-	(*stack)->prev = NULL;
-	add_dnodeint_end(stack, val);
-	free(first);
-}
-
-/**
  * pstr -  prints the string starting at the top of the stack
  * @stack: The begining of the doubly linked list.
  * @line_number: The line number of the opcode being worked on.
