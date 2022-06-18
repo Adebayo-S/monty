@@ -21,12 +21,13 @@ void pusher(stack_t **stack, unsigned int line_number)
 	{
 		if (var.idx == 0)
 		{
-			add_dnodeint_end(&reset, n);
+			add_dnodeint_end(stack, n);
 		}
 		else
 		{
-			insert_dnodeint_at_index(&reset, var.idx, n);
+			insert_dnodeint_at_index(stack, var.idx, n);
 		}
+		*stack = reset;
 	}
 	else
 	{
