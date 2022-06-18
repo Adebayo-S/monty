@@ -32,18 +32,7 @@ size_t dlistint_len(const stack_t *h)
 stack_t *add_dnodeint(stack_t **head, const int n)
 {
 	stack_t *new = malloc(sizeof(stack_t));
-	stack_t *temp;
-
 	
-	if ((*head)->prev != NULL)
-	{
-		temp = *head;
-		while (temp->prev != NULL)
-		{
-			temp = temp->prev;
-		}
-		*head = temp;
-	}
 	if (!new)
 		erro(4);
 
@@ -97,7 +86,7 @@ stack_t *add_dnodeint_end(stack_t **head, const int n)
 	last->next = new;
 	new->prev = last;
 
-	return (new);
+	return (*head);
 }
 
 /**
