@@ -35,6 +35,8 @@ void modder(stack_t **stack, unsigned int line_number)
 
 	if (dlistint_len(*stack) < 2)
 		erro(14, line_number);
+	if ((*stack)->n == 0)
+		erro(12, line_number);
 
 	first = *stack;
 	second = first->next;
