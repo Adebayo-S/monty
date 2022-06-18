@@ -10,20 +10,22 @@
 
 void pusher(stack_t **stack, unsigned int line_number)
 {
+	stack_t *reset;
 	char *text;
 	int n;
 
 	text = ivstg(var.value, line_number);
 	n = atoi(text);
+	reset = *stack;
 	if (var.mode == -1)
 	{
 		if (var.idx == 0)
 		{
-			add_dnodeint_end(stack, n);
+			add_dnodeint_end(reset, n);
 		}
 		else
 		{
-			insert_dnodeint_at_index(stack, var.idx, n);
+			insert_dnodeint_at_index(reset, var.idx, n);
 		}
 	}
 	else
