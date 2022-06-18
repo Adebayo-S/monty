@@ -19,6 +19,7 @@ void (*get_cmd(void))(stack_t **head, unsigned int line_number)
 		{"div", divider},
 		{"mul", multpler},
 		{"pchar", pchar},
+		{"rotl", rotl},
 		{NULL, NULL}
 	};
 

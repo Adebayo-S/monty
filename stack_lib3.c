@@ -42,3 +42,58 @@ void pchar(stack_t **stack, unsigned int line_number)
 
 	printf("%c\n", start->n);
 }
+
+/**
+ * rotl - rotate the stack to the top.
+ * @stack: The begining of the doubly linked list.
+ * @line_number: The line number of the opcode being worked on.
+ * Return: void
+ */
+void rotl(stack_t **stack, unsigned int line_number)
+{
+	stack_t *first;
+	int val = 0;
+	(void)line_number;
+
+	if (!*stack || !(*stack)->next)
+		return;
+
+	first = *stack;
+	val = first->n;
+	*stack = first->next;
+	(*stack)->prev = NULL;
+	add_dnodeint_end(stack, val);
+	free(first);
+}
+
+/**
+ * rotl - rotate the stack to the top.
+ * @stack: The begining of the doubly linked list.
+ * @line_number: The line number of the opcode being worked on.
+ * Return: void
+ */
+void reverse(stack_t **stack, unsigned int line_number)
+{
+	stack_t *start, *temp, *temp2;
+	(void)line_number;
+
+	start = *stack;
+
+	while (start->next)
+		start = start->next;
+
+	temp = start->prev;
+
+	while (temp)
+	{
+		temp2 = temp->prev;
+
+		temp->next->next = temp;
+		temp->prev = temp->next;
+		temp->next = temp2;
+
+		temp = temp->next;
+	}
+
+	start->prev = NULL;
+}
