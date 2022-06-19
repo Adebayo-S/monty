@@ -23,7 +23,7 @@ void pusher(stack_t **stack, unsigned int line_number)
 		}
 		else
 		{
-			insert_dnodeint_at_index(stack, var.idx, n);
+			insert_dnodeint_at_index(stack, (var.idx - 1), n);
 		}
 	}
 	else
